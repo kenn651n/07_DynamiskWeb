@@ -20,20 +20,21 @@
         document.querySelector("button").addEventListener("click", buttonClick);
 
         let random = (Math.round(Math.random() * 20) + 1);
-        console.log(random);
+        console.log(random)
 
         function buttonClick() {
             let tal = document.querySelector("#tal").value;
 
             let resultat;
             if (tal == random) {
-                `Tillykke du har gættet korrekt.`;
-            } else if (tal > random) {
-                `Desværre du har gættet forkert.`;
-            } else(tal < random) {
-                `Desværre du har gættet forkert.`;
-                console.log(resultat)
+                resultat = `Tillykke du har gættet korrekt.`;
+            } else if (tal < random) {
+                resultat = `Desværre du har gættet for lavt.`;
+            } else {
+                resultat = `Desværre du har gættet for højt.`;
             }
+            console.log(resultat)
+        }
 
     </script>
 
