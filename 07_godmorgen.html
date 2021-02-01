@@ -14,10 +14,28 @@
     <p>Click the button to display the hour of time right now.</p>
 
     <button>Try it</button>
+    <p id="demo"></p>
 
     <script>
+        document.querySelector("button").addEventListener("click", buttonClick);
 
+        function buttonClick() {
+            var d = new Date();
+            var n = d.getHours();
+
+
+
+            if (n < 5) {
+                n = `Klokken er ${n} Godnat.`;
+            } else if (n < 10) {
+                n = `Klokken er ${n} Godmorgen.`;
+            } else if (n < 18) {
+                n = `Klokken er ${n} Goddag.`;
+            } else if (n < 24) {
+                n = `Klokken er ${n} Godaften.`;
+            }
+            document.getElementById("demo").innerHTML = n;
+            console.log(n)
+        }
     </script>
-</body>
-
-</html>
+</body></html>
