@@ -23,12 +23,21 @@
 
         function buttonClick() {
             let timer = document.querySelector("#timer").value;
-            let resultat = `Ved ${timer} har du udledt ${timer*109}kg co2`;
+            let co2 = 109;
+            let co2udledt = timer * co2;
+            let resultat;
 
+            if (co2udledt < 100) {
+                resultat = `Ved ${timer} flyvetur har du udledt ${co2udledt}kg co2. Tæt på Thunberg`;
+            } else if (co2udledt < 200) {
+                resultat = `Ved ${timer} flyvetur har du udledt ${co2udledt}kg co2. Ja ja, du behøver ikke at melde dig ud af Å!`;
+            } else if (co2udledt < 600) {
+                resultat = `Ved ${timer} flyvetur har du udledt ${co2udledt}kg co2. Det er godt for turismen i nordeuropa.`;
+            } else if (co2udledt > 600) {
+                resultat = `Ved ${timer} flyvetur har du udledt ${co2udledt}kg co2. Nå ja vi kan jo altid kolonisere en anden planet ...`;
+
+            }
             console.log(resultat);
         }
-
     </script>
-</body>
-
-</html>
+</body></html>
