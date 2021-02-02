@@ -12,10 +12,51 @@
 
 <body>
 
+    <p>Din alder</p>
+    <input type="text" id="alder">
+
+    <p>Dates alder</p>
+    <input type="text" id="alder2">
+    <button>find alder</button>
 
 
     <script>
+        let alder;
+        let alder2;
+        let minimumAlder;
+        let maximumAlder;
 
 
+        document.querySelector("button").addEventListener("click", buttonClick)
+
+        function buttonClick() {
+            alder = document.querySelector("#alder").value;
+            alder2 = document.querySelector("#alder2").value;
+            //Hvor gammel må din date være.
+            minimumAlder = Math.round(alder / 2 + 7);
+            maximumAlder = Math.round(alder * 2 - 7);
+            console.log(minimumAlder)
+            console.log(maximumAlder)
+
+            if (minimumAlder < 15 || alder2 < 15) {
+                console.log("En af parterne er for ung.")
+            } else {
+                if (alder2 >= minimumAlder && alder2 <= maximumAlder)
+                    console.log("Det er passende.")
+
+
+
+            }
+            if (alder2 < minimumAlder) {
+
+                console.log(`Du er ${alder} og din date er ${alder2}. Din date er ${minimumAlder-alder2} år for ung.`)
+
+            } else if (alder2 < maximumAlder) {
+                console.log(`Du er ${alder} og din date er ${alder2}. Din date er ${alder2-minimumAlder} år for gammel.`)
+            }
+
+
+
+        }
     </script>
 </body></html>

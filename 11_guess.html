@@ -14,36 +14,42 @@
 
     <p>Gæt tal mellem 1-20</p>
     <input type="text" id="tal">
-    <button>Gæt</button>
+    <button id="Guess">Gæt</button>
+    <button id="New">Nyt spil</button>
 
     <p id="demo"></p>
 
 
     <script>
-        document.querySelector("button").addEventListener("click", buttonClick);
+        document.querySelector("#Guess").addEventListener("click", buttonClick);
 
-        let random = (Math.round(Math.random() * 20) + 1);
+        let antalGæt = 0;
+        const random = (Math.round(Math.random() * 20) + 1);
         console.log(random)
 
         function buttonClick() {
+            antalGæt++;
             let tal = document.querySelector("#tal").value;
 
             let resultat;
             if (tal == random) {
-                resultat = `Tillykke du har gættet korrekt.`;
+                resultat = `Tillykke du har gættet korrekt. Du har gættet ${antalGæt} gange.`;
             } else if (tal < random) {
                 resultat = `Desværre du har gættet for lavt, prøv igen.`;
             } else {
-                resultat = `Desværre du har gættet for højt< prøv igen.`;
+                resultat = `Desværre du har gættet for højt, prøv igen.`;
             }
             document.getElementById("demo").innerHTML = resultat;
 
             console.log(resultat)
-
         }
 
+        document.querySelector("#New").addEventListener("click", newGame)
+
+        function newGame() {
+
+
+        }
     </script>
 
-</body>
-
-</html>
+</body></html>
