@@ -1,14 +1,21 @@
 <!DOCTYPE html>
 <html lang="">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
-    <link rel="stylesheet" href="">
+    <style>
+        .colour {
+            color: navajowhite;
+            transition: 1s;
+        }
+
+    </style>
 </head>
 
 <body>
-
+    <button>RESET</button>
     <ul id="display">
 
     </ul>
@@ -17,5 +24,21 @@
         const team = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"];
 
         team.forEach(number => display.innerHTML += "<li>" + number + "</li>");
+
+        let AllLi = document.querySelectorAll("li");
+        AllLi.forEach(li => {
+            li.addEventListener("click", () => {
+                li.classList.add("colour");
+            })
+        })
+
+        document.querySelector("button").addEventListener("click", () => {
+            AllLi.forEach(li => {
+                li.classList.remove("colour")
+            })
+        })
+
     </script>
-</body></html>
+</body>
+
+</html>
