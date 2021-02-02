@@ -39,7 +39,6 @@
             }
 
         }
-
     </style>
 </head>
 
@@ -111,11 +110,9 @@
         pic1.addEventListener("click", clickPic);
 
         function clickPic() {
-            pic1.src = "https://placeimg.com/400/300/arch?t=%22+tilf%C3%A6ldigtTal";
+            let random = Math.round(Math.random() * 10);
+            pic1.src = "https://placeimg.com/400/300/arch?t=%22+tilf%C3%A6ldigtTal" + random;
             console.log("change to random picture")
         }
-
     </script>
-</body>
-
-</html>
+</body></html>
