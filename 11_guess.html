@@ -16,6 +16,9 @@
     <input type="text" id="tal">
     <button>Gæt</button>
 
+    <p id="demo"></p>
+
+
     <script>
         document.querySelector("button").addEventListener("click", buttonClick);
 
@@ -29,11 +32,14 @@
             if (tal == random) {
                 resultat = `Tillykke du har gættet korrekt.`;
             } else if (tal < random) {
-                resultat = `Desværre du har gættet for lavt.`;
+                resultat = `Desværre du har gættet for lavt, prøv igen.`;
             } else {
-                resultat = `Desværre du har gættet for højt.`;
+                resultat = `Desværre du har gættet for højt< prøv igen.`;
             }
+            document.getElementById("demo").innerHTML = resultat;
+
             console.log(resultat)
+
         }
 
     </script>
