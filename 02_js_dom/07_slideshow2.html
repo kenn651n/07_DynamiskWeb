@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Slideshow</title>
+</head>
+
+<body>
+    <h1>BILLEDE SLIDESHOW</h1>
+    <img src="billeder/img1.png" alt="billede 1">
+    <button>NEXT</button>
+    <P></P>
+
+    <script>
+        let number = 0;
+
+        const billede = document.querySelector("img");
+
+        let billeder = ["img1.png", "img2.png", "img3.png", "img4.png", "img5.png", "img6.png", "img7.png", "img8.png"];
+
+        const knap = document.querySelector("button");
+
+        knap.addEventListener("click", skiftBillede);
+
+        function skiftBillede() {
+
+            if (number < 7) {
+                //tæl op
+                number++;
+                console.log(billeder[number]);
+                billede.src = "billeder/" + billeder[number];
+            } else {
+                number = 0;
+                billede.src = "billeder/" + billeder[number];
+            }
+        }
+
+        knap.addEventListener("click", skiftKnap);
+
+        function skiftKnap() {
+
+            if (number == 7) {
+                knap.textContent = "ONE MORE TIME";
+            } else if (number == 6) {
+                knap.textContent = "NUMBA 6";
+            } else if (number == 5) {
+                knap.textContent = "NUMBA 5";
+            } else if (number == 4) {
+                knap.textContent = "NUMBA 4";
+            } else if (number == 3) {
+                knap.textContent = "NUMBA 3";
+            } else if (number == 2) {
+                knap.textContent = "NUMBA 2";
+            } else if (number == 2) {
+                knap.textContent = "NUMBA 2";
+            } else if (number == 1) {
+                knap.textContent = "NUMBA 1";
+            } else {
+                knap.textContent = "NEXT";
+            }
+        }
+    </script>
+</body></html>
