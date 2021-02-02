@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        img {
+            width: 100%;
+        }
+
+        header {
+            text-align: center;
+            border-bottom: solid 1px;
+
+
+        }
+
+        section {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        footer {
+            display: block;
+            margin: 0 auto;
+            text-align: center;
+            border: solid 1px;
+
+        }
+
+        article:hover {
+        transition-duration: 3s;
+        box-shadow: 10px 10px 18px 0px rgba(0, 0, 0, 0.75);
+        -webkit-box-shadow: 10px 10px 18px 0px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: 10px 10px 18px 0px rgba(0, 0, 0, 0.75);
+        }
+
+        @media screen and (min-width:700px) {
+            section {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                column-gap: 20px;
+
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        titel
+    </header>
+    <main>
+
+        <section>
+            <article> <img src="pics/brioche.jpg" alt="" class="first">
+                <h2>Article 1</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere cupiditate consequuntur ea porro nostrum voluptatem voluptate eligendi doloribus quo sapiente? Eligendi fugit magnam nam harum omnis possimus, natus nobis sunt.</p>
+            </article>
+            <article><img src="pics/brioche2.jpg" alt="" class="second">
+                <h2>Article 2</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere cupiditate consequuntur ea porro nostrum voluptatem voluptate eligendi doloribus quo sapiente? Eligendi fugit magnam nam harum omnis possimus, natus nobis sunt.</p>
+            </article>
+        </section>
+    </main>
+    <footer>This is the footer</footer>
+
+    <script>
+        const titel = document.querySelector("header");
+        console.log(titel)
+
+        document.addEventListener("DOMContentLoaded", start);
+
+        function start() {
+            console.log("dom er loaded");
+            titel.innerHTML = "<h1>Billeder</h1>"
+
+
+            const pic1 = document.querySelector("article:first-child img")
+            //console.log(pic1)
+            pic1.alt = "lækker brioche";
+            pic1.src = "pics/croissant.jpg"
+
+            const pic2 = document.querySelector("article:nth-child(2) img")
+            //console.log(pic2)
+            pic2.alt = "SUPER lækker brioche";
+            pic2.src = "pics/croissant2.jpg"
+
+            const Overskrift1 = document.querySelector("article:first-child h2")
+            //console.log(Overskrift1);
+            Overskrift1.textContent = "Very nice brioche"
+
+            const Overskrift2 = document.querySelector("article:nth-child(2) h2")
+            //console.log(Overskrift2);
+            Overskrift2.textContent = "Very nice brioche aswell"
+
+            const tekst1 = document.querySelector("article:first-child p")
+            //console.log(tekst1);
+            tekst1.textContent = "This is a very nice recipe for a very nice brioche"
+
+            const tekst2 = document.querySelector("article:nth-child(2) p")
+            //console.log(tekst2);
+            tekst2.textContent = "This is a very nice recipe for a very nice brioche as well"
+
+            const article1 = document.querySelector("article:first-child");
+
+            let newImg = document.createElement('img');
+            newImg.setAttribute('src', '/pics/brioche.jpg');
+            //console.log(newImg);
+        }
+        const pic1 = document.querySelector("article:first-child img")
+
+        pic1.addEventListener("click", clickPic);
+
+        function clickPic() {
+            let random = Math.round(Math.random() * 10);
+            pic1.src = "https://placeimg.com/400/300/arch?t=%22+tilf%C3%A6ldigtTal" + random;
+            console.log("change to random picture")
+        }
+    </script>
+</body></html>
