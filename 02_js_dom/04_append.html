@@ -39,6 +39,7 @@
             }
 
         }
+
     </style>
 </head>
 
@@ -64,39 +65,44 @@
 
     <script>
         const titel = document.querySelector("header");
-        console.log(titel)
-        titel.textContent = "Billedgalleri"
-        titel.innerHTML = "<h1>Billeder</h1>"
 
-        const pic1 = document.querySelector("article:first-child img")
-        console.log(pic1)
+        titel.textContent = "Billedgalleri";
+        titel.innerHTML = "<h1>Billeder</h1>";
+
+        const pic1 = document.querySelector("article:first-child img");
         pic1.alt = "lækker brioche";
-        pic1.src = "pics/croissant.jpg"
+        pic1.src = "pics/croissant.jpg";
 
-        const pic2 = document.querySelector("article:nth-child(2) img")
-        console.log(pic2)
+        const pic2 = document.querySelector("article:nth-child(2) img");
         pic2.alt = "SUPER lækker brioche";
-        pic2.src = "pics/croissant2.jpg"
+        pic2.src = "pics/croissant2.jpg";
 
-        const Overskrift1 = document.querySelector("article:first-child h2")
-        console.log(Overskrift1);
-        Overskrift1.textContent = "Very nice brioche"
+        const Overskrift1 = document.querySelector("article:first-child h2");
+        Overskrift1.textContent = "Very nice brioche";
 
-        const Overskrift2 = document.querySelector("article:nth-child(2) h2")
-        console.log(Overskrift2);
-        Overskrift2.textContent = "Very nice brioche aswell"
+        const Overskrift2 = document.querySelector("article:nth-child(2) h2");
+        Overskrift2.textContent = "Very nice brioche aswell";
 
-        const tekst1 = document.querySelector("article:first-child p")
-        console.log(tekst1);
-        tekst1.textContent = "This is a very nice recipe for a very nice brioche"
+        const tekst1 = document.querySelector("article:first-child p");
+        tekst1.textContent = "This is a very nice recipe for a very nice brioche";
 
-        const tekst2 = document.querySelector("article:nth-child(2) p")
-        console.log(tekst2);
-        tekst2.textContent = "This is a very nice recipe for a very nice brioche as well"
+        const tekst2 = document.querySelector("article:nth-child(2) p");
+        tekst2.textContent = "This is a very nice recipe for a very nice brioche as well";
 
-        const article1 = document.querySelector("article:first-child");
-        let newImg = document.createElement('img');
-        newImg.setAttribute('src', '/pics/brioche.jpg');
-        console.log(newImg);
+        let newArticle = document.createElement("article");
+        let newH2 = document.createElement("h2");
+        let newHeadlineText = document.createTextNode("Lækker Brioche");
+        newH3.appendChild(newHeadlineText);
+        let newPic = document.createElement("img");
+        newPic.src = "pics/brioche.jpg";
+        let newContent = document.createElement("p");
+        newContent.textContent = "Namme nam brioche :*";
+        newArticle.appendChild(newPic);
+        newArticle.appendChild(newH3);
+        newArticle.appendChild(newContent);
+        articleSection.appendChild(newArticle);
+
     </script>
-</body></html>
+</body>
+
+</html>
