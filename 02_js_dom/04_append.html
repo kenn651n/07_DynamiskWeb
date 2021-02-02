@@ -89,16 +89,18 @@
         const tekst2 = document.querySelector("article:nth-child(2) p");
         tekst2.textContent = "This is a very nice recipe for a very nice brioche as well";
 
+
+        const articleSection = document.querySelector("section");
         let newArticle = document.createElement("article");
         let newH2 = document.createElement("h2");
         let newHeadlineText = document.createTextNode("Lækker Brioche");
-        newH3.appendChild(newHeadlineText);
+        newH2.appendChild(newHeadlineText);
         let newPic = document.createElement("img");
         newPic.src = "pics/brioche.jpg";
         let newContent = document.createElement("p");
         newContent.textContent = "Namme nam brioche :*";
         newArticle.appendChild(newPic);
-        newArticle.appendChild(newH3);
+        newArticle.appendChild(newH2);
         newArticle.appendChild(newContent);
         articleSection.appendChild(newArticle);
 
