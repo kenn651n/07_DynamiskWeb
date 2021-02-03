@@ -10,9 +10,10 @@
         #container {
 
             display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
+            /*            Autofit colums very nice new strategy we learned in this assignment*/
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             grid-gap: 5px;
-            max-width: 960px;
+            max-width: 1020px;
             margin: 0 auto;
         }
 
