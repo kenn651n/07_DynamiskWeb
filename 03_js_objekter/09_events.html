@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+
+    <style>
+        #container {
+
+            display: grid;
+            /*            Autofit colums very nice new strategy we learned in this assignment*/
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-gap: 5px;
+            max-width: 1020px;
+            margin: 0 auto;
+        }
+
+        img {
+            width: 100%;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <main>
+        <section id="container">
+
+        </section>
+
+        <template>
+            <div>
+                <img src="" alt="">
+                <h3></h3>
+                <p></p>
+            </div>
+        </template>
+
+    </main>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", start);
+        let vids = [{
+            "video": "https://odense-film-festival.s3.eu-central-1.amazonaws.com/media/W6dOqabNhHKBPXxxKKEZRA84-720.jpg",
+            "tekst": "a Calling",
+            "undetekst": "Christan Bengtson",
+        }, {
+            "video": "https://odense-film-festival.s3.eu-central-1.amazonaws.com/media/Q8K1pZrOs03Q0IrDkBwGVu5r-360.jpg",
+            "tekst": "a Hole in my heart",
+            "undetekst": "Mees Peijnenburg",
+        }, {
+            "video": "https://odense-film-festival.s3.eu-central-1.amazonaws.com/media/hUd4SdGQ8I23ovxWnGtBz4Ck-1920.jpg",
+            "tekst": "A place in the sun",
+            "undetekst": "A place in the sun",
+        }, {
+            "video": "https://odense-film-festival.s3.eu-central-1.amazonaws.com/media/Zdt2ODEqSVOkNe8nUaSSu8kd.jpg",
+            "tekst": "A tower of two",
+            "undetekst": "Jacob krzysztof",
+        }, {
+            "video": "https://odense-film-festival.s3.eu-central-1.amazonaws.com/media/2iUOgQpixgIQCxyLtY6KiYuU-360.jpg",
+            "tekst": "a worthy man",
+            "undetekst": "Christan håskjold",
+        }, ]
+
+        function start() {
+            const container = document.querySelector("#container")
+            const Template = document.querySelector("template");
+            vids.forEach(vids => {
+                //Indsæt dyr array i template
+                let klon = Template.cloneNode(true).content;
+                klon.querySelector("img").src = vids.video;
+                klon.querySelector("h3").textContent = vids.tekst;
+                klon.querySelector("p").textContent = vids.undetekst;
+                container.appendChild(klon);
+            })
+        }
+
+    </script>
+</body>
+
+</html>
