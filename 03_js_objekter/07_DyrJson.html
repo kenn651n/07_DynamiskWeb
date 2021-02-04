@@ -11,7 +11,6 @@
             display: block;
             border: solid 1px #000;
         }
-
     </style>
 
 </head>
@@ -32,33 +31,41 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", start);
+        let dyr = [{
+            "navn": "gris",
+            "type": "pattedyr",
+            "levested": "I naturen",
+            "billede": "http://mabe-kea.dk/E19/pics/pig.png",
+        }, {
+            "navn": "frog",
+            "type": "havmand",
+            "levested": "vand",
+            "billede": "http://mabe-kea.dk/E19/pics/frog.png",
+        }, {
+            "navn": "fox",
+            "type": "WHAT DOES THE FOX SAY",
+            "levested": "I naturen",
+            "billede": "http://mabe-kea.dk/E19/pics/fox.png",
+        }, {
+            "navn": "Krokodille",
+            "type": "pattedyr",
+            "levested": "farligt vand",
+            "billede": "http://mabe-kea.dk/E19/pics/kroko.jpg",
+        }];
 
-        const fil = "dyr.json";
 
-        async function hentdata(fil) {
-            const result = await fetch(fil);
-            const json = await result.json();
-            start(dyr)
-
-        }
-
-
-        function start(json) {
+        function start() {
             const container = document.querySelector(".data_container")
             const dyrTemplate = document.querySelector("template");
-            json.forEach(dyr => {
+            dyr.forEach(dyr => {
                 //Indsæt dyr array i template
                 let klon = dyrTemplate.cloneNode(true).content;
-                klon.querySelector("h3").textContent = json.navn;
-                klon.querySelector(".p1").textContent = json.type;
-                klon.querySelector(".p2").textContent = json.levested;
-                klon.querySelector("img").src = json.billede;
+                klon.querySelector("h3").textContent = dyr.navn;
+                klon.querySelector(".p1").textContent = dyr.type;
+                klon.querySelector(".p2").textContent = dyr.levested;
+                klon.querySelector("img").src = dyr.billede;
                 container.appendChild(klon);
-            });
+            })
         }
-        hentdata(fil)
-
     </script>
-</body>
-
-</html>
+</body></html>

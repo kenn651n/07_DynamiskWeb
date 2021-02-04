@@ -1,28 +1,21 @@
-[
-    {
-        "navn": "gris",
-        "type": "pattedyr",
-        "levested": "I naturen",
-        "billede": "http://mabe-kea.dk/E19/pics/pig.png",
-        },
-    {
-        "navn": "frog",
-        "type": "havmand",
-        "levested": "vand",
-        "billede": "http://mabe-kea.dk/E19/pics/frog.png",
-        },
-    {
-        "navn": "fox",
-        "type": "WHAT DOES THE FOX SAY",
-        "levested": "I naturen",
-        "billede": "http://mabe-kea.dk/E19/pics/fox.png",
-        },
-    {
-        "navn": "Krokodille",
-        "type": "pattedyr",
-        "levested": "farligt vand",
-        "billede": "http://mabe-kea.dk/E19/pics/kroko.jpg",
-
-    }
-
-]
+[{
+    "navn": "gris",
+    "type": "pattedyr",
+    "levested": "I naturen",
+    "billede": "http://mabe-kea.dk/E19/pics/pig.png",
+        }, {
+    "navn": "frog",
+    "type": "havmand",
+    "levested": "vand",
+    "billede": "http://mabe-kea.dk/E19/pics/frog.png",
+        }, {
+    "navn": "fox",
+    "type": "WHAT DOES THE FOX SAY",
+    "levested": "I naturen",
+    "billede": "http://mabe-kea.dk/E19/pics/fox.png",
+        }, {
+    "navn": "Krokodille",
+    "type": "pattedyr",
+    "levested": "farligt vand",
+    "billede": "http://mabe-kea.dk/E19/pics/kroko.jpg",
+        }]
