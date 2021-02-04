@@ -11,6 +11,7 @@
             display: block;
             border: solid 1px #000;
         }
+
     </style>
 
 </head>
@@ -30,35 +31,26 @@
 
 
     <script>
-        document.addEventListener("DOMContentLoaded", start);
-        let dyr = [{
-            "navn": "gris",
-            "type": "pattedyr",
-            "levested": "I naturen",
-            "billede": "http://mabe-kea.dk/E19/pics/pig.png",
-        }, {
-            "navn": "frog",
-            "type": "havmand",
-            "levested": "vand",
-            "billede": "http://mabe-kea.dk/E19/pics/frog.png",
-        }, {
-            "navn": "fox",
-            "type": "WHAT DOES THE FOX SAY",
-            "levested": "I naturen",
-            "billede": "http://mabe-kea.dk/E19/pics/fox.png",
-        }, {
-            "navn": "Krokodille",
-            "type": "pattedyr",
-            "levested": "farligt vand",
-            "billede": "http://mabe-kea.dk/E19/pics/kroko.jpg",
-        }];
+        let container = document.querySelector(".data_container")
+        let dyrTemplate = document.querySelector("template");
+
+        const jsonfil = "dyr.json";
+
+        async function hentdata(jsonfil) {
+            const resultat = await fetch(jsonfil);
+            const json = await resultat.json();
+            vis(json)
+        }
+
+        function vis(json) {
+            console.log(json);
+        }
 
 
-        function start() {
-            const container = document.querySelector(".data_container")
-            const dyrTemplate = document.querySelector("template");
+
+        function start(dyr) {
+            //Indsæt dyr array i template
             dyr.forEach(dyr => {
-                //Indsæt dyr array i template
                 let klon = dyrTemplate.cloneNode(true).content;
                 klon.querySelector("h3").textContent = dyr.navn;
                 klon.querySelector(".p1").textContent = dyr.type;
@@ -67,5 +59,10 @@
                 container.appendChild(klon);
             })
         }
+        hentdata(jsonfil);
+        start(dyr)
+
     </script>
-</body></html>
+</body>
+
+</html>
