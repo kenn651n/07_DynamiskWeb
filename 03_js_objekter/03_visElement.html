@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+
+    <style></style>
+
+</head>
+
+<body>
+    <article id="person">
+        <h3></h3>
+        <img src="" alt="">
+        <p></p>
+        <p id="p2"></p>
+
+    </article>
+
+
+    <script>
+        let person = {
+            "navn": "gris",
+            "type": "pattedyr",
+            "billede": "http://mabe-kea.dk/E19/pics/pig.png",
+            "levested": "I naturen"
+        }
+
+        const destination = document.querySelector("#person");
+        const fuldeNavn = `Dyr: ${person.navn}`
+        const leveSted = `levested: ${person.levested}`
+        const Type = `Type: ${person.type}`
+        destination.querySelector("h3").textContent = fuldeNavn;
+        destination.querySelector("img").src = person.billede;
+        destination.querySelector("p").textContent = Type;
+        destination.querySelector("#p2").textContent = leveSted;
+    </script>
+</body></html>
