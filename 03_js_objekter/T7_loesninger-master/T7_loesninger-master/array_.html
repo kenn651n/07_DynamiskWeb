@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>sangliste</title>
+</head>
+
+<body>
+    <ul id="liste"></ul>
+</body>
+<script>
+    const titler = ["Jeg ved en lærkerede", "Solen er så rød mor", "Lille sky gik morgentur", "Jeg har en flyvemaskine", "Ole lukøje"];
+
+    titler.forEach(sang => {
+        const li = document.createElement("li");
+        li.textContent = sang;
+        liste.appendChild(li);
+    });
+
+</script>
+
+</html>
