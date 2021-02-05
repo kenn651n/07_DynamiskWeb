@@ -17,6 +17,7 @@
         img {
             max-width: 100px;
         }
+
     </style>
 
 </head>
@@ -28,7 +29,6 @@
         <article>
             <h2 class="mærke"></h2>
             <h3 class="model"></h3>
-
             <p class="motor"></p>
             <p class="km"></p>
             <p>Udstyr:</p>
@@ -52,7 +52,7 @@
 
         function vis(bil) {
             //løb igennem array "dyr"
-            bil.forEach(bil => {
+            bil.forEach(biler => {
                 const klon = temp.cloneNode(true).content;
                 klon.querySelector("h2").textContent = biler.mærke;
                 klon.querySelector("h3").textContent = "model: " + biler.model;
@@ -66,5 +66,8 @@
         }
 
         hentdata();
+
     </script>
-</body></html>
+</body>
+
+</html>
