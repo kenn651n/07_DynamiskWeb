@@ -94,15 +94,11 @@
             //sæt variablen filter til værdien af data-troende på den knap de er klikket på;
             filter = this.dataset.troende;
 
-            //fjern klassen valgt fra den knap som den er påsat på i html
-
+            //fjern klassen fra valgt knap
             document.querySelector(".valgt").classList.remove("valgt");
 
-            //markere den knap der er klikket på, dette gøres ved at anvende this og add
-
+            //marker valgt knap
             this.classList.add("valgt");
-
-
 
             //kald funktionen visperson efter det nye filter er sat på;
 
