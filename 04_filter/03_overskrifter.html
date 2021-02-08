@@ -46,15 +46,16 @@
 </head>
 
 <body>
-
     <header>
-        <nav>
-            <button data-troende="alle" class="valgt">Alle</button>
-            <button data-troende="ja">Troende</button>
-            <button data-troende="nej">Ikke troende</button>
-            <button data-troende="tvivler">Tvivler</button>
-        </nav>
+        <h1>Alle</h1>
     </header>
+    <nav>
+        <button data-troende="alle" class="valgt">Alle</button>
+        <button data-troende="ja">Troende</button>
+        <button data-troende="nej">Ikke troende</button>
+        <button data-troende="tvivler">Tvivler</button>
+    </nav>
+
 
     <section id="liste"></section>
 
@@ -96,6 +97,11 @@
             //kald funktionen visperson efter det nye filter er sat på;
 
             visPersoner();
+
+            //når der klikkes på en knap, sørger eventhandleren.funktionen for, at h1-overskriften indehold opdateres. this henviser til den button der er klikket på;
+            header.textContent = this.textContent;
+
+            console.log(this);
 
         }
 
