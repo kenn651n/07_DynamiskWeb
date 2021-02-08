@@ -131,10 +131,12 @@
             retter.forEach(mad => {
                 if (filter == mad.kategori || filter == "alle") {
                     const klon = temp.cloneNode(true);
+                    klon.querySelector(".billede").alt = mad.navn;
                     klon.querySelector(".billede").src = medieurl + mad.billede;
                     klon.querySelector(".navn").textContent = mad.navn;
                     klon.querySelector(".kort_beskrivelse").textContent = mad.kortbeskrivelse;
                     klon.querySelector(".pris").textContent = (`Pris: ${mad.pris},-`);
+
                     container.appendChild(klon);
                 }
             })
