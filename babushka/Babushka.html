@@ -6,8 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Babushka Bistro</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
         body {
-            background-color: white;
+            background-color: #f0d79e;
+
         }
 
         section {
@@ -19,11 +25,10 @@
         }
 
         article {
-            border: 1px #333;
-            border-radius: 25px;
+            border: solid 1px #333;
             padding: 10px;
-            margin: 1em;
-            background-color: #e2deca;
+            margin: .5em;
+
         }
 
         img {
@@ -32,60 +37,130 @@
 
         nav {
             text-align: center;
+            color: white;
+            background-color: #222222;
+            padding 1em;
+            cursor: pointer;
+            position: fixed;
+            left: 0;
+            right: 0;
+            padding: 1em;
+
+
         }
 
-        button {
-            font-size: 1.3rem;
+        #logo_div {
+            text-align: center;
+        }
+
+        .logo {
+            text-align: center;
+            margin-top: 6em;
+            width: 40%;
+        }
+
+        nav a {
+            text-decoration: none;
+            margin: 0 1em;
+            display: none;
+
+        }
+
+        .direct {
             margin: 1vw;
+            text-align: right;
+            cursor: pointer;
+
+        }
+
+        .direct button {
+            padding: 0.10rem 0.5em;
+            border-radius: 60px;
+            margin-top: 10px;
+            margin: 0;
+            color: #000;
+            font-weight: 600;
+            cursor: pointer;
         }
 
         .valgt {
             background-color: #e8be85;
         }
 
+        h1,
+        h2,
+        h3,
+        h4,
+        p,
+        nav {
+            font-family: 'poppins', sans-serif;
+            font-weight: normal;
+            z-index: 10000;
+        }
+
         h1 {
+            margin-top: 1em;
             text-align: center;
             text-transform: uppercase;
+
         }
 
-        h2 {
-            text-align: center;
-            text-transform: uppercase;
-        }
-
-        h3 {
-            text-align: center;
-            text-transform: uppercase;
-        }
 
         h4 {
-            text-align: center;
-            text-transform: uppercase;
+
+            font-weight: bold;
+            padding-top: 10px;
+
         }
 
+        .pris {
+            color: #be2929;
+        }
+
+        @media (min-width: 600px) {
+
+
+            nav a {
+                display: inline;
+            }
+
+        }
     </style>
 </head>
 
 <body>
+
+    <header>
+        <nav>
+            <a data-kategori="alle" class="valgt">Alle</a>
+            <a data-kategori="forretter">Forretter</a>
+            <a data-kategori="hovedretter">Hovedretter</a>
+            <a data-kategori="desserter">Desserter</a>
+            <a data-kategori="sideorders">Sideorders</a>
+            <a data-kategori="drikkevarer">Drikkevarer</a>
+        </nav>
+    </header>
+
+    <div id="logo_div"><img class="logo" src="Header.png" alt=""></div>
+
     <h1>Alle</h1>
-    <nav>
-        <button data-kategori="alle" class="valgt">Alle</button>
-        <button data-kategori="forretter">Forretter</button>
-        <button data-kategori="hovedretter">Hovedretter</button>
-        <button data-kategori="desserter">Desserter</button>
-        <button data-kategori="sideorders">Sideorders</button>
-        <button data-kategori="drikkevarer">Drikkevarer</button>
-    </nav>
 
     <section></section>
+
     <template>
-        <article>
+        <article class="mad">
             <img src="" alt="" class="billede">
             <h2 class="navn"></h2>
             <h3 class="kort_beskrivelse"></h3>
-            <h4 class="pris"></h4>
+
+            <div class="direct">
+                <h4 class="pris"></h4>
+                <button>Detaljer</button>
+            </div>
+
         </article>
     </template>
+
     <script>
         const url = "https://babushka-dd8a.restdb.io/rest/menu";
         const medieurl = "https://babushka-dd8a.restdb.io/media/";
@@ -102,7 +177,7 @@
         let filter = "alle";
 
         function start() {
-            const filterKnapper = document.querySelectorAll("nav button");
+            const filterKnapper = document.querySelectorAll("nav a");
             filterKnapper.forEach(knap => knap.addEventListener("click", filtrerRetter));
             hentData();
         }
@@ -118,6 +193,7 @@
         async function hentData() {
             const respons = await fetch(url, options);
             retter = await respons.json();
+            console.log("mad", retter)
             visRetter();
         }
 
@@ -136,14 +212,15 @@
                     klon.querySelector(".navn").textContent = mad.navn;
                     klon.querySelector(".kort_beskrivelse").textContent = mad.kortbeskrivelse;
                     klon.querySelector(".pris").textContent = (`Pris: ${mad.pris},-`);
+                    klon.querySelector(".mad").addEventListener("click", () => visDetaljer(mad));
 
                     container.appendChild(klon);
                 }
             })
         }
-        hentData();
 
+        function visDetaljer(hvad) {
+            location.href = `02_detalje.html?id=${hvad._id}`;
+        }
     </script>
-</body>
-
-</html>
+</body></html>
