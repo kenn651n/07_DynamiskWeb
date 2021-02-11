@@ -155,7 +155,7 @@
 
             <div class="direct">
                 <h4 class="pris"></h4>
-                <button>Detaljer</button>
+                <button class="view">Detaljer</button>
             </div>
 
         </article>
@@ -212,7 +212,7 @@
                     klon.querySelector(".navn").textContent = mad.navn;
                     klon.querySelector(".kort_beskrivelse").textContent = mad.kortbeskrivelse;
                     klon.querySelector(".pris").textContent = (`Pris: ${mad.pris},-`);
-                    klon.querySelector(".mad").addEventListener("click", () => visDetaljer(mad));
+                    klon.querySelector(".view").addEventListener("click", () => visDetaljer(mad));
 
                     container.appendChild(klon);
                 }
